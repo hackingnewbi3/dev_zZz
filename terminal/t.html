@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 터미널</title>
+    <style>
+        body {
+            background: url('1.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        #terminal {
+            width: 100%;
+            height: 500px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            overflow-y: auto;
+            color: #33ff33;
+            font-family: monospace;
+        }
+        #input-line {
+            display: flex;
+        }
+        #prompt {
+            color: #33ff33;
+            margin-right: 5px;
+        }
+        #command {
+            background: transparent;
+            border: none;
+            color: #33ff33;
+            outline: none;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="terminal">
+        <div>root@dev_zZz:/#</div>
+    </div>
+    <div id="input-line">
+        <span id="prompt">root@dev_zZz:/#</span>
+        <input type="text" id="command" autofocus>
+    </div>
+    
+    <script>
+        const terminal = document.getElementById("terminal");
+        const commandInput = document.getElementById("command");
+        let currentDir = "/";
+        const fileSystem = {
+            "/": ["home", "var", "etc", "user"],
+            "/home": ["user1", "user2"],
+            "/var": ["log", "www"],
+            "/etc": ["config", "network"],
+            "/user": ["documents", "downloads"]
+        };
+        
+        function executeCommand(cmd) {
+            const args = cmd.trim().split(" ");
+            const command = args[0];
+            let output = "";
+            
+            if (command === "ls") {
+                output = fileSystem[currentDir] ? fileSystem[currentDir].join("  ") : "";
+            } else if (command === "cd") {
+                if (args[1] === "..") {
+                    if (currentDir !== "/") {
+                        currentDir = currentDir.substring(0, currentDir.lastIndexOf("/")) || "/";
+                    }
+                } else if (args[1] && fileSystem[currentDir] && fileSystem[currentDir].includes(args[1])) {
+                    currentDir = currentDir + (currentDir === "/" ? "" : "/") + args[1];
+                } else {
+                    output = "디렉토리를 찾을 수 없습니다.";
+                }
+            } else if (command === "clear") {
+                terminal.innerHTML = "";
+                return;
+            } else {
+                output = "명령어를 찾을 수 없습니다.";
+            }
+            
+            terminal.innerHTML += `<div>root@dev_zZz:${currentDir}# ${cmd}</div>`;
+            if (output) terminal.innerHTML += `<div>${output}</div>`;
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+        
+        commandInput.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                executeCommand(commandInput.value);
+                commandInput.value = "";
+            }
+        });
+    </script>
+</body>
+</html>
