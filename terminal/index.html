@@ -6,18 +6,18 @@
     <title>웹 터미널</title>
     <style>
         body {
-            background-color: #121212;
-            color: #33ff33;
-            font-family: monospace;
-            padding: 20px;
+            background: url('1.jpg') no-repeat center center fixed;
+            background-size: cover;
         }
         #terminal {
             width: 100%;
             height: 500px;
-            background: black;
+            background: rgba(0, 0, 0, 0.8);
             padding: 10px;
             border-radius: 5px;
             overflow-y: auto;
+            color: #33ff33;
+            font-family: monospace;
         }
         #input-line {
             display: flex;
@@ -37,8 +37,7 @@
 </head>
 <body>
     <div id="terminal">
-        <div>dev_zZz:/#</div>
-        <div>root@dev_zZz:/# (명령어)</div>
+        <div>root@dev_zZz:/#</div>
     </div>
     <div id="input-line">
         <span id="prompt">root@dev_zZz:/#</span>
