@@ -17,13 +17,6 @@
             margin: 0;
             text-align: center;
         }
-        .container {
-            max-width: 600px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-            margin-bottom: 30px;
-        }
         h2 {
             font-size: 2em;
             margin-bottom: 10px;
@@ -33,6 +26,10 @@
             color: #00c3ff;
             font-weight: bold;
         }
+        .button-container {
+            display: inline-block;
+            margin-left: 20px;
+        }
         .home-button {
             background-color: #00c3ff;
             color: white;
@@ -41,7 +38,6 @@
             font-size: 1.2em;
             cursor: pointer;
             border-radius: 5px;
-            margin-left: 20px;
             transition: background-color 0.3s;
         }
         .home-button:hover {
@@ -87,7 +83,9 @@
 </head>
 <body>
     <h2>📷 사진 갤러리</h2>
-    <button class="home-button" onclick="goHome()">처음 페이지로</button>
+    <div class="button-container">
+        <button class="home-button" onclick="goHome()">처음 페이지로</button>
+    </div>
     <div class="gallery">
         <img src="/image/1.jpg" alt="사진 1" onclick="openModal(this)">
         <img src="/image/2.jpg" alt="사진 2" onclick="openModal(this)">
