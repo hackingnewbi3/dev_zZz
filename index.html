@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev.zZz</title>
+    <title>나의 소개</title>
     <style>
         body {
             background-color: #121212;
@@ -15,6 +15,7 @@
             height: 100vh;
             margin: 0;
             text-align: center;
+            flex-direction: column;
         }
         .container {
             max-width: 600px;
@@ -34,13 +35,32 @@
             color: #00c3ff;
             font-weight: bold;
         }
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-links a {
+            color: #00c3ff;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #ff4081;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>안녕하세요! 저는 <span class="highlight">zZz</span>입니다.</h1>
-        <p>해킹에 관심이 많고, 개발을 배우며 성장하고 있습니다.</p>
+        <h1>안녕하세요! 저는 <span class="highlight">뉴비 개발자</span>입니다.</h1>
+        <p>보안과 해킹에 관심이 많고, 개발을 배우며 성장하고 있습니다.</p>
         <p>새로운 기술을 탐험하고, 세상을 더 안전하게 만들고 싶어요!</p>
+        <p>현재 웹 개발, 네트워크 보안, 그리고 시스템 해킹을 공부 중입니다.</p>
+        <div class="social-links">
+            <a href="#">준비중..</a>
+            <a href="#">준비중...</a>
+            <a href="#">준비중...</a>
+        </div>
     </div>
 </body>
 </html>
