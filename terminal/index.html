@@ -77,6 +77,9 @@
             } else if (command === "clear") {
                 terminal.innerHTML = "";
                 return;
+            } else if (command === "exit") {
+                window.location.href = "/";
+                return;
             } else {
                 output = "명령어를 찾을 수 없습니다.";
             }
