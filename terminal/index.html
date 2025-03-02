@@ -81,12 +81,14 @@
             } else if (command === "exit") {
                 window.location.href = "/";
                 return;
+            } else if (command === "man") {
+                output = "사용 가능한 명령어:\nls - 현재 디렉토리 목록 출력\ncd <디렉토리> - 디렉토리 이동\ncd .. - 상위 디렉토리 이동\nclear - 터미널 초기화\nexit - 메인 페이지로 이동";
             } else {
                 output = "명령어를 찾을 수 없습니다.";
             }
             
             terminal.innerHTML += `<div>root@dev_zZz:${currentDir}# ${cmd}</div>`;
-            if (output) terminal.innerHTML += `<div>${output}</div>`;
+            if (output) terminal.innerHTML += `<div>${output.replace(/\n/g, '<br>')}</div>`;
             terminal.scrollTop = terminal.scrollHeight;
         }
         
