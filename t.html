@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .post-list {
+            margin-top: 20px;
+        }
+
+        .post {
+            background: #f9f9f9;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+        }
+
+        .post h2 {
+            margin-bottom: 10px;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .read-more:hover {
+            background: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>게시판</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">홈</a></li>
+                    <li><a href="#">게시물 작성</a></li>
+                    <li><a href="#">마이페이지</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <section class="post-list">
+                <article class="post">
+                    <h2>게시물 제목 1</h2>
+                    <p>작성자: 사용자1 | 날짜: 2025-03-01</p>
+                    <p>게시물 내용이 여기에 들어갑니다. 간단한 소개나 내용을 추가할 수 있습니다.</p>
+                    <a href="#" class="read-more">더 보기</a>
+                </article>
+                
+                <article class="post">
+                    <h2>게시물 제목 2</h2>
+                    <p>작성자: 사용자2 | 날짜: 2025-02-28</p>
+                    <p>게시물 내용이 여기에 들어갑니다. 간단한 소개나 내용을 추가할 수 있습니다.</p>
+                    <a href="#" class="read-more">더 보기</a>
+                </article>
+                
+                <article class="post">
+                    <h2>게시물 제목 3</h2>
+                    <p>작성자: 사용자3 | 날짜: 2025-02-27</p>
+                    <p>게시물 내용이 여기에 들어갑니다. 간단한 소개나 내용을 추가할 수 있습니다.</p>
+                    <a href="#" class="read-more">더 보기</a>
+                </article>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 게시판. 모든 권리 보유.</p>
+        </footer>
+    </div>
+</body>
+</html>
