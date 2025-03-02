@@ -3,132 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나의 갤러리</title>
+    <title>테스트 페이지</title>
     <style>
         body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            margin: 0;
+            height: 100vh;
             text-align: center;
         }
-        h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-        .highlight {
-            color: #00c3ff;
-            font-weight: bold;
-        }
-        .button-container {
-            display: inline-block;
-            margin-left: 20px;
-            vertical-align: middle;
-            margin-bottom: 30px;
-        }
-        .home-button {
-            background: linear-gradient(45deg, #00c3ff, #ff4081);
+
+        .header {
+            background-color: #ff6347;
+            width: 100%;
+            padding: 20px;
             color: white;
-            border: none;
-            padding: 12px 25px;
+            font-size: 2.5em;
+            text-transform: uppercase;
+        }
+
+        .content {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h2 {
+            font-size: 2em;
+            color: #ff6347;
+        }
+
+        .content p {
             font-size: 1.2em;
-            cursor: pointer;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            margin-top: 30px;
+        }
+
+        .button-container button {
+            background-color: #00bfff;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
             border-radius: 50px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
-        .home-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+
+        .button-container button:hover {
+            background-color: #ff6347;
         }
-        .home-button:focus {
-            outline: none;
-        }
+
         .gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
+
         .gallery img {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             object-fit: cover;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
         }
+
         .gallery img:hover {
             transform: scale(1.1);
         }
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-        .modal img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 10px;
-        }
-        .modal.show {
-            display: flex;
+
+        footer {
+            margin-top: 50px;
+            font-size: 1em;
+            color: #888;
         }
     </style>
 </head>
 <body>
-    <div>
-        <h2>📷 사진 갤러리</h2>
+    <div class="header">
+        테스트 페이지
+    </div>
+
+    <div class="content">
+        <h2>비슷하지 않은 콘텐츠</h2>
+        <p>이 페이지는 관련성 없는 여러 가지 요소들을 테스트하기 위해 만들어졌습니다. 각기 다른 기능들을 실험하고, 디자인을 실험해볼 수 있습니다.</p>
+        
         <div class="button-container">
-            <button class="home-button" onclick="goHome()">처음 페이지로</button>
+            <button onclick="alert('버튼 클릭!')">클릭 테스트</button>
         </div>
     </div>
+
     <div class="gallery">
-        <img src="/image/1.jpg" alt="사진 1" onclick="openModal(this)">
-        <img src="/image/2.jpg" alt="사진 2" onclick="openModal(this)">
-        <img src="/image/1.jpg" alt="사진 1" onclick="openModal(this)">
-        <img src="/image/2.jpg" alt="사진 2" onclick="openModal(this)">
-        <img src="/image/1.jpg" alt="사진 1" onclick="openModal(this)">
-        <img src="/image/2.jpg" alt="사진 2" onclick="openModal(this)">
-        <img src="/image/1.jpg" alt="사진 1" onclick="openModal(this)">
-        <img src="/image/2.jpg" alt="사진 2" onclick="openModal(this)">
-        <img src="/image/1.jpg" alt="사진 1" onclick="openModal(this)">
-        <img src="/image/2.jpg" alt="사진 2" onclick="openModal(this)">
-        <img src="/image/1.jpg" alt="사진 1" onclick="openModal(this)">
-        <img src="/image/2.jpg" alt="사진 2" onclick="openModal(this)">
-        <img src="/image/1.jpg" alt="사진 1" onclick="openModal(this)">
-        <img src="/image/2.jpg" alt="사진 2" onclick="openModal(this)">
-        <img src="https://via.placeholder.com/150" alt="사진 3" onclick="openModal(this)">
+        <img src="https://via.placeholder.com/200x200/00bfff/ffffff?text=이미지1" alt="이미지1">
+        <img src="https://via.placeholder.com/200x200/ff6347/ffffff?text=이미지2" alt="이미지2">
+        <img src="https://via.placeholder.com/200x200/90ee90/ffffff?text=이미지3" alt="이미지3">
     </div>
-    
-    <div class="modal" id="modal" onclick="closeModal()">
-        <img id="modal-img">
-    </div>
-    
+
+    <footer>
+        <p>Copyright © 2025 - All Rights Reserved</p>
+    </footer>
+
     <script>
-        function openModal(img) {
-            document.getElementById('modal-img').src = img.src;
-            document.getElementById('modal').classList.add('show');
-        }
-        function closeModal() {
-            document.getElementById('modal').classList.remove('show');
-        }
-        function goHome() {
-            window.location.href = '/';
-        }
+        // 페이지에서 별도의 기능을 추가할 수 있습니다
     </script>
 </body>
 </html>
