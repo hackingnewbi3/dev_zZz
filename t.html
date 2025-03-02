@@ -29,6 +29,7 @@
         .button-container {
             display: inline-block;
             margin-left: 20px;
+            vertical-align: middle;
         }
         .home-button {
             background-color: #00c3ff;
@@ -82,9 +83,11 @@
     </style>
 </head>
 <body>
-    <h2>📷 사진 갤러리</h2>
-    <div class="button-container">
-        <button class="home-button" onclick="goHome()">처음 페이지로</button>
+    <div>
+        <h2>📷 사진 갤러리</h2>
+        <div class="button-container">
+            <button class="home-button" onclick="goHome()">처음 페이지로</button>
+        </div>
     </div>
     <div class="gallery">
         <img src="/image/1.jpg" alt="사진 1" onclick="openModal(this)">
