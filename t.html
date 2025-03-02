@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 갤러리</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        .highlight {
+            color: #00c3ff;
+            font-weight: bold;
+        }
+        .home-button {
+            background-color: #00c3ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 20px;
+            transition: background-color 0.3s;
+        }
+        .home-button:hover {
+            background-color: #ff4081;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .gallery img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        .modal.show {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <h2>📷 사진 갤러리</h2>
+    <button class="home-button" onclick="goHome()">처음 페이지로</button>
+    <div class="gallery">
+        <img src="/image/1.jpg" alt="사진 1" onclick="openModal(this)">
+        <img src="/image/2.jpg" alt="사진 2" onclick="openModal(this)">
+        <img src="https://via.placeholder.com/150" alt="사진 3" onclick="openModal(this)">
+    </div>
+    
+    <div class="modal" id="modal" onclick="closeModal()">
+        <img id="modal-img">
+    </div>
+    
+    <script>
+        function openModal(img) {
+            document.getElementById('modal-img').src = img.src;
+            document.getElementById('modal').classList.add('show');
+        }
+        function closeModal() {
+            document.getElementById('modal').classList.remove('show');
+        }
+        function goHome() {
+            window.location.href = '/';
+        }
+    </script>
+</body>
+</html>
